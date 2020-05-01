@@ -1,14 +1,14 @@
 #!/bin/bash
 
-echo 'Number of parameters =' $#
+#echo 'Number of parameters =' $#
 
-i=0
-echo "Positional parameters:"
-for var in $0 $@
-do
-  echo '$'$i '=' $var
-  let i++
-done
+#i=0
+#echo "Positional parameters:"
+#for var in $0 $@
+#do
+#  echo '$'$i '=' $var
+#  let i++
+#done
 
 case $1 in
 
@@ -24,7 +24,7 @@ case $1 in
 	2) 
 	if [ $# -ne 3 ]
 	then
-		echo "Error: wrong parameters number! Correct format: ./es01.sh 1 fileName /path"
+		echo "Error: wrong parameters number! Correct format: ./es01.sh 2 fileName /path/"
 		exit 2
 	else
 		if [ ! -d $3 ]
@@ -33,9 +33,9 @@ case $1 in
 			echo "Created folder $3"
 		fi
     
-		if [ ! -e $3/$2 ]
+		if [ ! -e $3$2 ]
 		then
-			touch $3/$2
+			touch $3$2
 		else
 			echo "Error: the file $2 already exist inside the directory $3"
 			exit 3
@@ -45,7 +45,7 @@ case $1 in
 	3)
 	if [ $# -ne 4 ]
 	then
-		echo "Error: wrong parameters number! Correct format: ./es01.sh 1 fileName /sourcepath /destinationpath"
+		echo "Error: wrong parameters number! Correct format: ./es01.sh 3 fileName /sourcePath/ /destinationPath/"
 		exit 4
 	else
 		if [ ! -d $3 ]
@@ -71,7 +71,37 @@ case $1 in
 				exit 7
 			fi
 		fi
-		mv $3/$2 $4
+		mv $3$2 $4
+	fi ;;
+
+	4)
+	if [ $# -ne 2 ]
+	then
+		echo "Error: wrong parameters number! Correct format: ./es01.sh 4 fileName"
+		exit 8
+	else
+		if [ ! -e $2 ]
+		then
+			echo "Error: file $2 not found!"
+			exit 9
+		else
+			rm $2
+		fi
+	fi ;;		
+	
+	5)
+	if [ $# -ne 2 ]
+	then
+		echo "Error: wrong parameters number! Correct format: ./es01.sh 5 /path/"
+		exit 10
+	else
+		if [ ! -d $2 ]
+		then
+			echo "Error: directory $2 not found!"
+			exit 11
+		else
+			rm -rf $2
+		fi
 	fi ;;
 
 	*) echo "Error: command not found!" ;;
