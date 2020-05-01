@@ -50,5 +50,3 @@ Di conseguenza il file di uscita *hostRenamed.txt* dovrà essere identico a:<br/
 L'esecuzione deve essere ottenuta mediante il comando:<br/>
 `./es02.sh`<br/>
 il quale deve generare il file *hostRenamed.txt*.
-
-Per verificare la correttezza dell'esercizio, si suggerisce di utilizzare lo script di test e i file di confronto *host.txt* e *hostRenamed.txt* forniti.
