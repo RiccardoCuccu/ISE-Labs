@@ -12,23 +12,23 @@ Si vuole creare uno script che permetta di operare sui file le seguenti azioni:
 
 ### Consegna
 L'esecuzione deve essere ottenuta mediante il comando:<br/>
-`./ es 01. sh <comando > <argomento/i>`<br/>
+`./es01.sh <comando> <argomento/i>`<br/>
 ad esempio:<br/>
-`./ es 01. sh 1 fileName`<br/>
-`./ es 01. sh 2 fileName /path/`<br/>
-`./ es 01. sh 3 filename /sourcePath/ /destinationPath/`<br/>
-`./ es 01. sh 4 fileName`<br/>
-`./ es 01. sh 5 /path/`
+`./es01.sh 1 fileName`<br/>
+`./es01.sh 2 fileName /path/`<br/>
+`./es01.sh 3 filename /sourcePath/ /destinationPath/`<br/>
+`./es01.sh 4 fileName`<br/>
+`./es01.sh 5 /path/`
 
 ## Esercizio 2: rinominazione indirizzi IP
 Dato un elenco di indirizzi IP associati a diversi host come nel file in esempio
 denominato *host.txt*:<br/>
-`1) 165.137.1.1 alpha 1. polito .it alpha 1`<br/>
-`2) 165.137.1.2 alpha 2. polimi .it alpha 2`<br/>
-`3) 165.137.1.3 alpha 33. unito .it alpha 33`<br/>
-`4) 165.137.1.4 alpha 4. unimore .it alpha 4`<br/>
-`5) 232.1.1.1 beta 1. tum .de beta 1`<br/>
-`6) 232.1.1.2 beta 2. tum .de beta 2`<br/>
+`1) 165.137.1.1 alpha1.polito.it alpha1`<br/>
+`2) 165.137.1.2 alpha2.polimi.it alpha2`<br/>
+`3) 165.137.1.3 alpha33.unito.it alpha33`<br/>
+`4) 165.137.1.4 alpha4.unimore.it alpha4`<br/>
+`5) 232.1.1.1 beta1.tum.de beta1`<br/>
+`6) 232.1.1.2 beta2.tum.de beta2`<br/>
 
 A partire dal file in esempio *host.txt* è necessario creare un secondo file
 *hostRenamed.txt* secondo le seguenti regole:
@@ -39,16 +39,16 @@ A partire dal file in esempio *host.txt* è necessario creare un secondo file
 5. L'ultima colonna deve contenere il nuovo nome dell'host
 
 Di conseguenza il file di uscita *hostRenamed.txt* dovrà essere identico a:<br/>
-`192.168.1.31 host 1. polito .it host 1`<br/>
-`192.168.1.32 host 2. polimi .it host 2`<br/>
-`192.168.1.33 host 3. unito .it host 3`<br/>
-`192.168.1.34 host 4. unimore .it host 4`<br/>
-`192.168.1.35 host 5. tum .de host 5`<br/>
-`192.168.1.36 host 6. tum .de host 6`<br/>
+`192.168.1.31 host1.polito.it host1`<br/>
+`192.168.1.32 host2.polimi.it host2`<br/>
+`192.168.1.33 host3.unito.it host3`<br/>
+`192.168.1.34 host4.unimore.it host4`<br/>
+`192.168.1.35 host5.tum.de host5`<br/>
+`192.168.1.36 host6.tum.de host6`<br/>
 
 ### Consegna
 L'esecuzione deve essere ottenuta mediante il comando:<br/>
-`./ es 02. sh`<br/>
+`./es02.sh`<br/>
 il quale deve generare il file *hostRenamed.txt*.
 
 Per verificare la correttezza dell'esercizio, si suggerisce di utilizzare lo script di test e i file di confronto *host.txt* e *hostRenamed.txt* forniti.
