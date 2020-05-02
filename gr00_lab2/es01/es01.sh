@@ -1,13 +1,10 @@
 #!/bin/bash
 shopt -s extglob						# to remove files selectively
 
-##############
-#rm -r dbase
-#cp -r dbase2 dbase
-##############
-
 rm report.txt
-touch report.txt
+rm log.txt
+
+mkdir scripts
 
 find ./dbase -name "gr[0-9]*[ab]_lab01" -type d | sort | cut -d "/" -f 3 > folders.txt
 n_lines=`wc -l ./hostRenamed.txt | cut -d " " -f 1`
@@ -51,13 +48,14 @@ do
 	then
 		error_message="KO Missing file es02/es02.sh"
 	else
+		cp $bash_file ./scripts/$group.sh
 		cd $folder
 		./es02.sh
 		cd ../../..
 
 		if [ ! -e $hostRenamed_file ]
 		then
-			error_message="KO no es02/hostRenamed.txt was generated"
+			error_message="KO No es02/hostRenamed.txt was generated"
 		else
 			w_lines=`diff ./hostRenamed.txt $hostRenamed_file | grep "^>" | wc -l`		# wrong lines
 			c_lines=`expr $n_lines - $w_lines`						# correct lines
@@ -77,4 +75,30 @@ do
 
 done < folders.txt
 
+## Check similarities
+cd ./scripts
+for script_1 in $( ls )
+do
+	for script_2 in $( ls )
+	do
+		if [ "$script_1" != "$script_2" ]
+		then
+			diff -c -i -b -B $script_1 $script_2 > ../diff.txt
+			script_lines=`wc -l $script_1 | cut -d " " -f 1`
+			if ! [ -s ../diff.txt ]							# If diff.txt is not empty
+			then 
+				echo "The script $script_1 is 100% equal to the script $script_2." >> ../log.txt
+			else
+				copied_lines=`sort ../diff.txt | uniq | grep '^ ' | wc -l`
+				percentage_copy=`expr $copied_lines \* 100 / $script_lines`
+				echo "The script $script_1 is $percentage_copy% equal to the script $script_2." >> ../log.txt
+			fi
+		fi
+	done
+	rm "$script_1"
+done
+cd ..
+
 rm folders.txt
+rm diff.txt
+rm -r scripts
