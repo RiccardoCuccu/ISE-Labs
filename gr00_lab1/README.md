@@ -11,24 +11,30 @@ Si vuole creare uno script che permetta di operare sui file le seguenti azioni:
 6. Nel caso in cui l'utente fornisca argomenti errati deve essere generato un errore che spieghi chiaramente l'errore (ad esempio, numero del comando errato, numero di argomenti errato, ecc... )
 
 ### Consegna
-L'esecuzione deve essere ottenuta mediante il comando:<br/>
-`./es01.sh <comando> <argomento/i>`<br/>
-ad esempio:<br/>
-`./es01.sh 1 fileName`<br/>
-`./es01.sh 2 fileName /path/`<br/>
-`./es01.sh 3 filename /sourcePath/ /destinationPath/`<br/>
-`./es01.sh 4 fileName`<br/>
-`./es01.sh 5 /path/`
+L'esecuzione deve essere ottenuta mediante il comando:
+```bash
+$ ./es01.sh <comando> <argomento/i>
+```
+ad esempio:
+```bash
+$ ./es01.sh 1 fileName
+$ ./es01.sh 2 fileName /path/
+$ ./es01.sh 3 filename /sourcePath/ /destinationPath/
+$ ./es01.sh 4 fileName
+$ ./es01.sh 5 /path/
+```
 
 ## Esercizio 2: rinominazione indirizzi IP
 Dato un elenco di indirizzi IP associati a diversi host come nel file in esempio
-denominato *host.txt*:<br/>
-`1) 165.137.1.1 alpha1.polito.it alpha1`<br/>
-`2) 165.137.1.2 alpha2.polimi.it alpha2`<br/>
-`3) 165.137.1.3 alpha33.unito.it alpha33`<br/>
-`4) 165.137.1.4 alpha4.unimore.it alpha4`<br/>
-`5) 232.1.1.1 beta1.tum.de beta1`<br/>
-`6) 232.1.1.2 beta2.tum.de beta2`<br/>
+denominato *host.txt*:
+```
+1) 165.137.1.1 alpha1.polito.it alpha1
+2) 165.137.1.2 alpha2.polimi.it alpha2
+3) 165.137.1.3 alpha33.unito.it alpha33
+4) 165.137.1.4 alpha4.unimore.it alpha4
+5) 232.1.1.1 beta1.tum.de beta1
+6) 232.1.1.2 beta2.tum.de beta2
+```
 
 A partire dal file in esempio *host.txt* è necessario creare un secondo file
 *hostRenamed.txt* secondo le seguenti regole:
@@ -38,15 +44,19 @@ A partire dal file in esempio *host.txt* è necessario creare un secondo file
 4. Il nome del dominio deve rimanere invariato
 5. L'ultima colonna deve contenere il nuovo nome dell'host
 
-Di conseguenza il file di uscita *hostRenamed.txt* dovrà essere identico a:<br/>
-`192.168.1.31 host1.polito.it host1`<br/>
-`192.168.1.32 host2.polimi.it host2`<br/>
-`192.168.1.33 host3.unito.it host3`<br/>
-`192.168.1.34 host4.unimore.it host4`<br/>
-`192.168.1.35 host5.tum.de host5`<br/>
-`192.168.1.36 host6.tum.de host6`<br/>
+Di conseguenza il file di uscita *hostRenamed.txt* dovrà essere identico a:
+```
+192.168.1.31 host1.polito.it host1
+192.168.1.32 host2.polimi.it host2
+192.168.1.33 host3.unito.it host3
+192.168.1.34 host4.unimore.it host4
+192.168.1.35 host5.tum.de host5
+192.168.1.36 host6.tum.de host6
+```
 
 ### Consegna
-L'esecuzione deve essere ottenuta mediante il comando:<br/>
-`./es02.sh`<br/>
+L'esecuzione deve essere ottenuta mediante il comando:
+```bash
+$ ./es02.sh
+```
 il quale deve generare il file *hostRenamed.txt*.
