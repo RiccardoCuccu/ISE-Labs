@@ -27,9 +27,10 @@ Specifiche del problema:
 	- `simulation_3`
 	- `simulation_4`
 	- `simulation_5`
-Utilizzare il costrutto opportuno che permetta di verificare la corretta creazione di ciascuna cartella. Infatti, quando viene creata ciascuna cartella è necessario assicurarsi che la creazione sia andata a buon fine verificando che non siano state generate delle eccezioni.
+	
+	Utilizzare il costrutto opportuno che permetta di verificare la corretta creazione di ciascuna cartella. Infatti, quando viene creata ciascuna cartella è necessario assicurarsi che la creazione sia andata a buon fine verificando che non siano state generate delle eccezioni.
 In caso si sia verificato un errore che abbia impedito la creazione della cartella, riportare l'errore e terminare il programma.
-- All'interno di ciascuna cartella deve essere inserito un file *simulationScript.run* identico a quello presente all'interno della radice ad eccezione della riga contenente i diversi `simulationStep` che deve contenere l'elenco degli istanti di simulazione compresi tra t0 e tend sullo specifico step.
+- All'interno di ciascuna cartella deve essere inserito un file *simulationScript.run* identico a quello presente all'interno della radice ad eccezione della riga contenente i diversi `simulationStep` che deve contenere l'elenco degli istanti di simulazione compresi tra t<sub>0</sub> e t<sub>end</sub> sullo specifico step.
 Ad esempio, all'interno della cartella `simulation_1` dovrà essere modificato l'elenco dei `simulationStep` con:
 ```
 simulationStep 0 1 2 3 4 5 6 7 8 9 10
@@ -41,6 +42,7 @@ simulationStep 0 2 4 6 8 10
 
 ## Esercizio 2
 Si vuole realizzare su una macchina Linux un *Makefile* per automatizzare la compilazione di un programma scritto in linguaggio C.
+
 Il programma è costituito da:
 - Un file *main.c*, al cui interno è presente il seguente codice:
 ```c
@@ -70,5 +72,5 @@ int main( int argc, char **argv ) {
 ```
 Si scriva un *Makefile*, il quale, una volta invocato, produca un eseguibile con nome pari al numero di matricola del candidato. Inoltre, prima di avviare la compilazione, il processo di make deve incrementare di una unità il valore della macro del preprocessore `VERSION`, definita all'interno del file *version.h*.
 
-È possibile utilizzare esclusivamente comandi della shell (gcc, awk, sed, etc.).
+È possibile utilizzare esclusivamente comandi della shell (gcc, awk, sed, etc.).<br/>
 Non è possibile utilizzare altri linguaggi, ad esempio Python.
