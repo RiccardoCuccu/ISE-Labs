@@ -32,13 +32,13 @@ Specifiche del problema:
 In caso si sia verificato un errore che abbia impedito la creazione della cartella, riportare l'errore e terminare il programma.
 - All'interno di ciascuna cartella deve essere inserito un file *simulationScript.run* identico a quello presente all'interno della radice ad eccezione della riga contenente i diversi `simulationStep` che deve contenere l'elenco degli istanti di simulazione compresi tra t<sub>0</sub> e t<sub>end</sub> sullo specifico step.
 Ad esempio, all'interno della cartella `simulation_1` dovrà essere modificato l'elenco dei `simulationStep` con:
-```
-simulationStep 0 1 2 3 4 5 6 7 8 9 10
-```
-Mentre all'interno della cartella `simulation_2` dovrà essere presente la riga:
-```
-simulationStep 0 2 4 6 8 10
-```
+	```
+	simulationStep 0 1 2 3 4 5 6 7 8 9 10
+	```
+	Mentre all'interno della cartella `simulation_2` dovrà essere presente la riga:
+	```
+	simulationStep 0 2 4 6 8 10
+	```
 
 ## Esercizio 2
 Si vuole realizzare su una macchina Linux un *Makefile* per automatizzare la compilazione di un programma scritto in linguaggio C.
