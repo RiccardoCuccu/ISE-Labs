@@ -1,7 +1,6 @@
-/* 
+/*
 	This is the header file of the Command Interpreter
-	It's divided into two functions, a short description is given
-	before every function
+	It's divided into two functions, a short description is given before every function
 */
 
 //	Buffer size, parameter, 4 coordinates (max), mode

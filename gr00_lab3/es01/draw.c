@@ -105,3 +105,4 @@ void DrawEllipse(int xc, int yc, int xaxis, int yaxis, int m)
 		s+=a_2*((4*y)+6);
 	}
 }
+

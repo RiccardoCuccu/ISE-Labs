@@ -27,3 +27,4 @@ CommandInterpreter_arm.o: CommandInterpreter.c CommandInterpreter.h
 ### Cleanup
 clean:
 	rm *.o
+

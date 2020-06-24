@@ -29,7 +29,6 @@ int main(int argc, char** argv) {
 				printf("Command not found\n");
 		}
 
-
 		for(i=0; i<n_row; i++) {
 			for(j=0; j<n_col; j++)
 				printf("%i",DisplayBuffer[i][j]);

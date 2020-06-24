@@ -91,3 +91,4 @@ ReadCmdReadType* passParameters(char* buffer){
 	
 	return list_ptr;
 }
+

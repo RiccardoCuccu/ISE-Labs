@@ -11,3 +11,4 @@ The last subfunction, DrawEllipse, is a bit more complicated and utilizes Bresen
 In case of both the DrawLine and DrawEllipse the boundary check is implied in the DrawPoint calls, so it is possible to draw as far as the 128x128 allows even with inputs that would imply overstepping the boundaries.
 
 The DisplayBuffer is then returned to the main and printed on screen.	
+
