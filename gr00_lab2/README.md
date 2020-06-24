@@ -7,7 +7,7 @@ In particolare, si vuole verificare la correttezza degli script consegnati dopo 
 Scaricare il database di esempio fornito e creare uno script che verifichi quali tra i programmi caricate è conforme alle richieste del secondo esercizio del primo laboratorio.
 
 Nello specifico, lo script es01.sh deve essere in grado di eseguire le seguenti operazioni:
-1. Visitare tutte le cartelle che rispettano il formato *gr<nn>_lab01*.
+1. Visitare tutte le cartelle che rispettano il formato *gr<nn><s>_lab01*, dove *nn* corrisponde al numero del gruppo e *s* alla lettera corrispondente al sottogruppo.
 2. Verificare che all'interno vi sia presente la cartella *es02/* e il file *es02/es02.sh*.
 La mancata presenza della cartella o del file deve generare i relativi errori e il test del gruppo in esame deve considerarsi fallito.
 3. Verificare che il file *host.txt* sia presente e che al suo interno vi sia il seguente contenuto:
@@ -39,7 +39,7 @@ La mancata presenza della cartella o del file deve generare i relativi errori e 
     Verificando che:
     - il file *hostRenamed.txt* sia coerente al 100% con quello atteso;
     - nel caso in cui non lo sia, è necessario calcolare la percentuale di righe corrette.
-8. Generarare un file denominato *report.txt* contenete i report di esecuzione nel seguente formato:
+8. Generare un file denominato *report.txt* contenete i report di esecuzione nel seguente formato:
 
     ```
     gr01a KO Missing directory es02/
@@ -47,11 +47,12 @@ La mancata presenza della cartella o del file deve generare i relativi errori e 
     gr02a KO Unmatched output (0.00% correct)
     gr03a KO No es02/hostRenamed.txt was generated
     gr03b OK
-    gr04a KO Missing file es 02/es02.sh
+    gr04a KO Missing file es02/es02.sh
     gr04b KO Unmatched output (66.67% correct)
     ```
     
     Dove: alla prima colonna corrisponde il nome del gruppo, alla seconda le stringhe OK o KO (OK = matching del 100%, KO matching < 100%), mentre alla terza colonna corrisponde il tipo di errore (se riscontrato):
+    - mancata presenza del direttorio *es02/*;
     - mancata presenza dello script *es02.sh*;
     - mancata generazione del file di output *hostRenamed.txt*;
     - percentuale di matching tra il file di output e quello atteso.
