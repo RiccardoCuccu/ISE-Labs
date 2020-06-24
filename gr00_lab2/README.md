@@ -7,7 +7,7 @@ In particolare, si vuole verificare la correttezza degli script consegnati dopo 
 Scaricare il database di esempio fornito e creare uno script che verifichi quali tra i programmi caricate è conforme alle richieste del secondo esercizio del primo laboratorio.
 
 Nello specifico, lo script es01.sh deve essere in grado di eseguire le seguenti operazioni:
-1. Visitare tutte le cartelle che rispettano il formato *gr<nn><s>_lab01*, dove *nn* corrisponde al numero del gruppo e *s* alla lettera corrispondente al sottogruppo.
+1. Visitare tutte le cartelle che rispettano il formato *gr\<nn\>\<s\>_lab01*, dove *nn* corrisponde al numero del gruppo e *s* alla lettera corrispondente al sottogruppo.
 2. Verificare che all'interno vi sia presente la cartella *es02/* e il file *es02/es02.sh*.
 La mancata presenza della cartella o del file deve generare i relativi errori e il test del gruppo in esame deve considerarsi fallito.
 3. Verificare che il file *host.txt* sia presente e che al suo interno vi sia il seguente contenuto:
