@@ -1,5 +1,5 @@
 # ISE Lab 2
-Laboratorio 2 del corso Integrazione di Sistemi Embedded del corso magistrale in Embedde System (Ingegneria Elettronica) del Politecnico di Torino, anno accademico 2019/2020.<br/>
+Laboratorio 2 del corso **Integrazione di Sistemi Embedded** del corso magistrale in Embedde System (Ingegneria Elettronica) del Politecnico di Torino, anno accademico 2018/2019.<br/>
 
 ## Esercizio 1: verifica automatica degli output degli script del lab1
 Si vuole creare uno script bash per il controllo automatico dell'esecuzione di una serie di script.
