@@ -1,7 +1,7 @@
 # ISE Lab 1
 Laboratorio 1 del corso **Integrazione di Sistemi Embedded** del corso magistrale in Embedde System (Ingegneria Elettronica) del Politecnico di Torino, anno accademico 2018/2019.<br/>
 
-## Esercizio 1: menu per la gestione semplificata dei file
+## Esercizio 1
 Si vuole creare uno script che permetta di operare sui file le seguenti azioni:
 1. Riceva da tastiera il nome di un file completo di estensione e ne verifichi l'esistenza all'interno della home directory. Se all'interno della cartella sono presenti più sottocartelle, queste devono essere visitate in modo ricorsivo per ricercare la presenza del file (o più copie del file). Ogni volta che un'occorrenza viene trovata deve essere visualizzato un messaggio contenente il path all'interno del quale è stato trovato il file.
 2. Creazione di un nuovo file (di testo) il cui nome e direttorio di destinazione devono essere letti da tastiera. Nel caso in cui la cartella di destinazione non esista questa deve essere creata dandone avviso all'utente. Una volta accertata la presenza della cartella di destinazione è necessario verificare che il file non esista già; in tal caso restituire un errore all'utente.
@@ -24,7 +24,7 @@ $ ./es01.sh 4 fileName
 $ ./es01.sh 5 /path/
 ```
 
-## Esercizio 2: rinominazione indirizzi IP
+## Esercizio 2
 Dato un elenco di indirizzi IP associati a diversi host come nel file in esempio denominato *host.txt*:
 ```
 1) 165.137.1.1 alpha1.polito.it alpha1
