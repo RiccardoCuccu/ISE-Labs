@@ -1,5 +1,5 @@
 # ISE Lab 1
-Laboratorio 1 del corso Integrazione di Sistemi Embedded del corso magistrale in Embedde System (Ingegneria Elettronica) del Politecnico di Torino, anno accademico 2019/2020.<br/>
+Laboratorio 1 del corso **Integrazione di Sistemi Embedded** del corso magistrale in Embedde System (Ingegneria Elettronica) del Politecnico di Torino, anno accademico 2018/2019.<br/>
 
 ## Esercizio 1: menu per la gestione semplificata dei file
 Si vuole creare uno script che permetta di operare sui file le seguenti azioni:
