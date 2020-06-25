@@ -18,7 +18,7 @@ dove ``A`` e ``B`` sono gli operandi, ``Ci`` il riporto (Ci → Carry in) in ing
 Come mostrato in figura, in un Full-adder a "n" bit la struttura col riporto in ingresso esiste per poter eventualmente collegare un numero "n" full-adder in cascata per poter ottenere Full-adder a "n" bit.
 
 <p align="center">
-  <img src="./rca.png" width="70%">
+  <img src="./fig/rca.png" width="70%">
 </p>
 
 ### Prima analisi
@@ -54,7 +54,7 @@ Come secondo step, modificare lo script Python esistente come mostrato in figura
 3. Verificare che i risultati generati nel file *output_results.txt* siano corretti da un punto di vista logico. Nel caso in cui una o più combinazioni di ingressi producano un risultato errato, queste devono essere riportate in un file *log.txt*.
 
 <p align="center">
-  <img src="./flusso.png" width="70%">
+  <img src="./fig/flusso.png" width="70%">
 </p>
 
 ### Simulazioni parametriche
