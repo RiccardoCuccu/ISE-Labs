@@ -1,4 +1,6 @@
-## Gitignore Python
+######################
+## Gitignore Python ##
+######################
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -130,7 +132,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-## Gitignore C
+#################
+## Gitignore C ##
+#################
 
 # Prerequisites
 *.d
@@ -184,4 +188,3 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-
