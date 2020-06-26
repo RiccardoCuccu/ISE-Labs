@@ -2,11 +2,20 @@
 import fakeSerial as serial
 
 def Exame():
-	ser = serial.Serial(0)			# open first serial port
+	ser = serial.Serial(0)									# open first serial port
+	elements = {}
+
 	for n in range(100):
-		x = ser.read_until('3')		# read until ETX = '3'
-		print( "x =", x )
-	
-	ser.close()						# close port
+		x = ser.read_until('3')								# read until ETX = '3'
+		length = len(x[1:-1])
+		elements[length] = elements.get(length, 0)+1		# return 0+1 if the key is not found
+
+	ser.close()												# close port
+
+	f = open("log.txt", "w")
+
+	for n in elements:
+		f.write(str(n) + " " + str(elements[n]) + "\n")
+	f.close()
 	
 Exame()
