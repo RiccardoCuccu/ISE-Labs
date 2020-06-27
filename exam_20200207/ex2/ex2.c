@@ -33,14 +33,14 @@ int main(int argc, char **argv[])
 	}
 	
 	while(!feof(fsamp)) {
-		fscanf(fsamp,"%d\n", &campione);        // legge i campioni
+		fscanf(fsamp,"%d\n", &campione);		// legge i campioni
 		campioni[i] = campione;
 		printf("Campione: %d\n", campioni [i]);
 		i++;
 	}
 	
 	while(!feof(fcoef)) {
-		fscanf(fcoef,"%d\n", &coefficiente);    // legge i coefficienti
+		fscanf(fcoef,"%d\n", &coefficiente);		// legge i coefficienti
 		coefficienti[j] = coefficiente;
 		printf("Coefficiente: %d\n", coefficienti[j]);
 		j++;
@@ -48,7 +48,7 @@ int main(int argc, char **argv[])
 
 	int output = fir(samples, coefficients, numCoefficients);
 
-	fprintf(fout,"%d\n", output);               // scrive sul file di output
+	fprintf(fout,"%d\n", output);				// scrive sul file di output
 	//printf("%d", output);
 	
 	fclose(fsamp);

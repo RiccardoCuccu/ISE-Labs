@@ -1,5 +1,5 @@
 #!/bin/bash
-shopt -s extglob						# to remove files selectively
+shopt -s extglob											# to remove files selectively
 
 rm report.txt
 rm log.txt
@@ -18,23 +18,23 @@ do
 	group=`echo $line | cut -d "_" -f 1`
 
 	## Correction files
-	if [ -d $folder ]									# If the folder exists, delete all files except es02.sh and host.txt
+	if [ -d $folder ]										# If the folder exists, delete all files except es02.sh and host.txt
 	then
 		cd $folder
 		rm !("es02.sh"|"host.txt")
 		cd ../../..
 
-		if [ ! -e $host_file ]								# If the host.txt file does not exist, copy the original host.txt inside $folder
+		if [ ! -e $host_file ]									# If the host.txt file does not exist, copy the original host.txt inside $folder
 		then
 			cp ./host.txt $folder/host.txt
 			echo "host.txt file missing, copy successfully in $folder"
-		elif ! cmp -s ./host.txt $folder/host.txt					# If the host.txt file has been manipulated, copy the original host.txt inside $folder
+		elif ! cmp -s ./host.txt $folder/host.txt						# If the host.txt file has been manipulated, copy the original host.txt inside $folder
 		then
 			cp ./host.txt $folder/host.txt
 			echo "host.txt file changed, replacement successful in $folder"
 		fi
 
-		if [ -e $bash_file -a ! -x $bash_file ]						# If the es02.sh file exist and is not executable, make it executable
+		if [ -e $bash_file -a ! -x $bash_file ]							# If the es02.sh file exist and is not executable, make it executable
 		then
 			chmod u+x $bash_file
 		fi
@@ -85,7 +85,7 @@ do
 		then
 			diff -c -i -b -B $script_1 $script_2 > ../diff.txt
 			script_lines=`wc -l $script_1 | cut -d " " -f 1`
-			if ! [ -s ../diff.txt ]							# If diff.txt is not empty
+			if ! [ -s ../diff.txt ]								# If diff.txt is not empty
 			then 
 				echo "The script $script_1 is 100% equal to the script $script_2." >> ../log.txt
 			else
