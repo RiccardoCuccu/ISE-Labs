@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
 	varianza = varianza/11;
 
 	printf("Media: %f\nVarianza: %f\n", media, varianza);
-	// Media: 10.454545                                                                                              
+	// Media: 10.454545
 	// Varianza: 5.702480 
 	
 	fclose(flog);
