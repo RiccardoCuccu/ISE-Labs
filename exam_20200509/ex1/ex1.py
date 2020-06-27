@@ -13,9 +13,8 @@ def Exame():
 	ser.close()							# close port
 
 	f = open("log.txt", "w")
-
 	for n in elements:
-		f.write(str(n) + " " + str(elements[n]) + "\n")
+		f.write(str(n) + "\t" + str(elements[n]) + "\n")
 	f.close()
 	
 Exame()
