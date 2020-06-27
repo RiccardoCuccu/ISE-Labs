@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-int main(int argc, char **argv[])
+int main(int argc, char* argv[])
 {
 	FILE *flog;
 	float caratteri[100], pacchetti[100];
@@ -10,7 +10,7 @@ int main(int argc, char **argv[])
 	int i = 0, j = 0;
 	
 	if((flog=fopen("log.txt", "rt"))==NULL) {
-		printf("Errore nell'apertura del file");
+		printf("Errore nell'apertura del file\n");
 		exit(1);
 	}
 	
@@ -35,7 +35,7 @@ int main(int argc, char **argv[])
 	varianza = varianza/11;
 
 	printf("Media: %f\nVarianza: %f\n", media, varianza);
-	// Media: 10.454545                                                                                              
+	// Media: 10.454545
 	// Varianza: 5.702480 
 	
 	fclose(flog);
