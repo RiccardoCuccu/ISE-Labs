@@ -1,0 +1,5 @@
+mario rossi ingegnere elettronico
+julia smith ingegnere informatico
+mario rossi progetto 1234
+mario rossi progetto 5678
+julia smith progetto 1234
