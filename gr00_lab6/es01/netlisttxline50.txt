@@ -1,0 +1,88 @@
+.include ./subcircuit.txt
+
+*square wave generator between node 1 and ground
+V1 1 0 pulse(0 1 54.67PS 0.20PS 0.00PS 5NS)
+
+*12 Ohm resistor between nodes 1 and 2
+R1 1 2 12.50
+
+*subcircuit 1
+XSUB1 2 3 0 lc_sub
+*subcircuit 2
+XSUB2 3 4 0 lc_sub
+*subcircuit 3
+XSUB3 4 5 0 lc_sub
+*subcircuit 4
+XSUB4 5 6 0 lc_sub
+*subcircuit 5
+XSUB5 6 7 0 lc_sub
+*subcircuit 6
+XSUB6 7 8 0 lc_sub
+*subcircuit 7
+XSUB7 8 9 0 lc_sub
+*subcircuit 8
+XSUB8 9 10 0 lc_sub
+*subcircuit 9
+XSUB9 10 11 0 lc_sub
+*subcircuit 10
+XSUB10 11 12 0 lc_sub
+*subcircuit 11
+XSUB11 12 13 0 lc_sub
+*subcircuit 12
+XSUB12 13 14 0 lc_sub
+*subcircuit 13
+XSUB13 14 15 0 lc_sub
+*subcircuit 14
+XSUB14 15 16 0 lc_sub
+*subcircuit 15
+XSUB15 16 17 0 lc_sub
+*subcircuit 16
+XSUB16 17 18 0 lc_sub
+
+*0.05nH inductor between node 18 and 19
+L1 18 19 0.05n
+*0.02pF capacitor between node 19 and 0
+C1 19 0 0.02p
+*0.05nH inductor between node 19 and 20
+L2 19 20 0.05n
+*0.02pF capacitor between node 20 and 0
+C2 20 0 0.02p
+*0.05nH inductor between node 20 and 21
+L3 20 21 0.05n
+*0.02pF capacitor between node 21 and 0
+C3 21 0 0.02p
+*0.05nH inductor between node 21 and 22
+L4 21 22 0.05n
+*0.02pF capacitor between node 22 and 0
+C4 22 0 0.02p
+
+*50Ohm resistor between nodes 22 and 0
+R2 22 0 50
+
+*Equivalent circuit model using transmission lines
+V2 23 0 pulse(0 1 54.67PS 0.20PS 0.00PS 5NS)
+
+*12 Ohm resistor between nodes 23 and 24
+R3 23 24 12.50
+
+*Transmission line
+T1 24 0 25 0 Z0=50.00 TD=164p
+
+*50Ohm resistor between nodes 25 and 0
+R4 25 0 50
+
+*transient analysis between 0 and 5ns, with 0.1ps step
+.tran 0.01p 5n
+.control
+run
+set hcopydevtype=postscript
+set hcopypscolor=1
+set color0 =rgb:f/f/f
+set color1 =rgb:0/0/0
+set color2 =rgb:0/0/f
+set color3 =rgb:f/0/0
+set color4 =rgb:0/f/0
+print v(23) v(22) v(25) >res50.txt
+hardcopy res50.ps v(1) v(22) v(25)
+.endc
+.end

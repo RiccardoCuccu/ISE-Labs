@@ -1,0 +1,55 @@
+*subcircuit definition
+.subckt lc_sub 1 11 99
+
+*components
+*0.05nH inductor between node 1 and 2
+L1 1 2 0.05n
+*0.02pF capacitor between node 2 and 99
+C1 2 99 0.02p
+
+*0.05nH inductor between node 2 and 3
+L2 2 3 0.05n
+*0.02pF capacitor between node 3 and 99
+C2 3 99 0.02p
+
+*0.05nH inductor between node 3 and 4
+L3 3 4 0.05n
+*0.02pF capacitor between node 4 and 99
+C3 4 99 0.02p
+
+*0.05nH inductor between node 4 and 5
+L4 4 5 0.05n
+*0.02pF capacitor between node 5 and 99
+C4 5 99 0.02p
+
+*0.05nH inductor between node 5 and 6
+L5 5 6 0.05n
+*0.02pF capacitor between node 6 and 99
+C5 6 99 0.02p
+
+*0.05nH inductor between node 6 and 7
+L6 6 7 0.05n
+*0.02pF capacitor between node 7 and 99
+C6 7 99 0.02p
+
+*0.05nH inductor between node 7 and 8
+L7 7 8 0.05n
+*0.02pF capacitor between node 8 and 99
+C7 8 99 0.02p
+
+*0.05nH inductor between node 8 and 9
+L8 8 9 0.05n
+*0.02pF capacitor between node 9 and 99
+C8 9 99 0.02p
+
+*0.05nH inductor between node 9 and 10
+L9 9 10 0.05n
+*0.02pF capacitor between node 10 and 99
+C9 10 99 0.02p
+
+*0.05nH inductor between node 10 and 11
+L10 10 11 0.05n
+*0.02pF capacitor between node 11 and 99
+C10 11 99 0.02p
+
+.ends
