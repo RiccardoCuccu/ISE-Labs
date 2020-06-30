@@ -1,3 +1,5 @@
+target: drawer drawer_arm
+
 ### x86_64 exe files
 drawer: Drawer.o draw.o CommandInterpreter.o
 	gcc -Wall -static -g -o drawer Drawer.o draw.o CommandInterpreter.o
@@ -26,5 +28,5 @@ CommandInterpreter_arm.o: CommandInterpreter.c CommandInterpreter.h
 
 ### Cleanup
 clean:
-	rm *.o
+	rm *.o drawer drawer_arm
 

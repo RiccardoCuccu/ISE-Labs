@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include"CommandInterpreter.h"
+#include "CommandInterpreter.h"
 
 /*
 	This function is in charge of acquiring parameters, in case of

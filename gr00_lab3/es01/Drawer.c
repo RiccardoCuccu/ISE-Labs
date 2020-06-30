@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include"CommandInterpreter.h"
-#include"draw.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "CommandInterpreter.h"
+#include "draw.h"
 
 int main(int argc, char** argv) {
 
@@ -16,6 +16,9 @@ int main(int argc, char** argv) {
 		list_ptr = passParameters(buffer);
 
 		switch(list_ptr->cmd) {
+			/* case 'C':
+				CancDisplayBuffer();
+				break; */
 			case 'P':
 				DrawPoint(list_ptr->xc, list_ptr->yc, list_ptr->m);
 				break;
