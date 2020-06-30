@@ -28,5 +28,4 @@ CommandInterpreter_arm.o: CommandInterpreter.c CommandInterpreter.h
 
 ### Cleanup
 clean:
-	rm *.o drawer drawer_arm
-
+	rm -f *.o drawer drawer_arm
