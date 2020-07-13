@@ -93,7 +93,7 @@ int main(int argc, char *argv[]){
 		exit(2);
 	}
 
-	fprintf(fout, "character\tOccorrenza\n");				// print the start line
+	fprintf(fout, "Carattere\tOccorrenze\n");				// print the start line
 	for (i=0; i<26; i++) {							// print each letter and its occurrences
 		n=97+i;
 		fprintf(fout, "%c\t\t%d\n", n, aphabet[i]);

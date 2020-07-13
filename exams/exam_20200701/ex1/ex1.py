@@ -1,30 +1,26 @@
 #!/usr/bin/env python3
 
+import string
+
 d={}
 counter=0
 
-for line in open("divinaCommedia.txt"):            #per ogni riga del file
-    words=line        
-    words=words.split()                                    # salva in words la riga come una lista di parole
-    for word in words:                                        # per ogni parola della lista
-        counter=counter+1                                # incrementa il contatore
-        for char in word:                                        # per ogni carattere di ogni parola
-            d[char] = get(char,0)+1                        # salva le occorrenze di tutti i caratteri (non solo lettere) dividendo
+for line in open("divinaCommedia.txt"):				# for each line of the file
+	words=line.split()					# save the line in "words" as a list of words
+	for word in words:					# for each word in the list
+		counter=counter+1				# increase the word counter
+		for char in word:				# for each character of the word
+			d[char] = d.get(char,0)+1		# save occurrences individually
 
-                                                                            # tra maiuscole e minuscole
+f=open("report.txt", "w")					# opens the report.txt file
+f.write("Carattere\tOccorrenze\n")				# print the start line
 
-f=open("report.txt", "w")
-f.write("Carattere\tOccorrenze\n")
+for letter in list(string.ascii_uppercase):			# for each uppercase letter
+	ASCII_code=((ord(letter)+32))				# save the ASCII code of the respective lowercase letter
+	d[letter] = d.get(letter,0)				# if an uppercase letter was not found in the text, set its value to zero
+	d[chr(ASCII_code)] = d.get(chr(ASCII_code),0)		# if a lowercase letter was not found in the text, set its value to zero
+	somma=((d[letter]+d[chr(ASCII_code)]))			# sum the occurrences of uppercase and lowercase letters
+	f.write(chr(ASCII_code)+"\t\t"+str(somma)+"\n")		# print each letter and its occurrences
 
-for letter in (a,b,c,d,e,f, ..... z):                            # sicuramente esiste una funzione per ciclare sulle lettere dell'alfabeto
-
-                                                                            # (forse [a-z] o forse anche con range() ma non sono sicuro)
-
-     ASCII_code= ((ord(letter)+27))                        # suppongo che l'offset tra i caratteri ascii sia 27 ma dovrebbe essere
-                                                                                # un po' di più (basta prendere una tabella ascii)
-    somma=((d[letter]+d[chr(ASCII_code)]))        # somma dei valori maiuscoli e minuscoli
-    f.write(letter+"\t")                                            # stampa la lettera
-    f.write(str(somma)+"\n")                                # stampa il valore corrispondente e torna a capo
-
-f.write("Totale parole: "+str(count))                            # stampa l'ultima riga con il totale delle parole del file
-f.close()
+f.write("Totale parole: "+str(counter))				# print the number of words
+f.close()							# closes the report.txt file
