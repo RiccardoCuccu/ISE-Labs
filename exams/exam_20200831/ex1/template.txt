@@ -1,0 +1,3 @@
+Ciao! Questa è la variabile $a ok?
+Ma anche questa è una variabile: $b
+$a invece è la stessa variabile di prima
