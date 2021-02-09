@@ -1,7 +1,7 @@
 # Import the simulator module (it should be in the same directory as this program)
 import fakeSerial as serial
 
-def Exame():
+def Exam():
 	ser = serial.Serial(0)						# open first serial port
 	elements = {}
 
@@ -17,4 +17,4 @@ def Exame():
 		f.write(str(n) + "\t" + str(elements[n]) + "\n")
 	f.close()
 	
-Exame()
+Exam()

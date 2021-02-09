@@ -11,9 +11,7 @@ class Serial:
 
 	## init(): the constructor.  Many of the arguments have default values
 	# and can be skipped when calling the constructor.
-	def __init__( self, port='COM1', baudrate = 19200, timeout=1,
-				  bytesize = 8, parity = 'N', stopbits = 1, xonxoff=0,
-				  rtscts = 0):
+	def __init__( self, port='COM1', baudrate = 19200, timeout=1, bytesize = 8, parity = 'N', stopbits = 1, xonxoff=0, rtscts = 0):
 		self.name     = port
 		self.port     = port
 		self.timeout  = timeout
@@ -27,15 +25,15 @@ class Serial:
 		self._receivedData = ""
 		#self._data = "It was the best of times.\nIt was the worst of times.\n"
 		self._data = "2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
-					 "2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
-					 "2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
-					 "2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
-					 "2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
-					 "2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
-					 "2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
-					 "2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
-					 "2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
-					 "2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3"
+					"2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
+					"2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
+					"2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
+					"2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
+					"2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
+					"2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
+					"2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
+					"2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3" + \
+					"2first32second32third32fourth32fifth32sixth32seventh32eighth32ninth32tenth3"
 
 	## isOpen()
 	# returns True if the port to the Arduino is open.  False otherwise
