@@ -3,7 +3,7 @@
 ## Esercizio 1
 Risolvere l'esercizio richiesto mediante uno script in linguaggio Python.<br/>
 Si vuole realizzare un programma in grado di ricevere uno stream di dati tramite interfaccia seriale.
-I dati, ricevuti con un baudrate di 9600 bps, sono numeri espressi mediante caratteri ASCII , in notazione esadecimale su 16 bit.<br/>
+I dati, ricevuti con un baudrate di 9600 bps, sono numeri espressi mediante caratteri ASCII, in notazione esadecimale su 16 bit.<br/>
 Il software deve ricevere i dati, calcolare la media mobile su 16 campioni ed inviare il risultato tramite seriale mantenendo il medesimo baudrate, e lo stesso formato.
 I risultati devono essere allo stesso tempo memorizzati su di un file di uscita, di nome *data.txt*.
 
