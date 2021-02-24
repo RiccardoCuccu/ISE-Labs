@@ -25,7 +25,7 @@ make reader
 
 Successivamente eseguire il file generato `reader` seguito dal nome della Named Pipe che si intende utilizzare, in questo caso:
 ```
-./writer myoutput
+./reader myoutput
 ```
 
 Infine in un terzo terminale compilare il file `ex2.c` ed eseguire il file generato `ex2.out` tramite il comando:
