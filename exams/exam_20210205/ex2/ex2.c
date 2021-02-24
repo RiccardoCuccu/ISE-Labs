@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
 	int i = 0;
 	FILE *f;
 
-	int int_elements[SAMPLESNUM];
+	int int_elements[SAMPLESNUM] = {};						// initialize the array to zero
 	char hex_elements[SAMPLEBYTES+1];
 
 	char serialNameIn[] = "myinput";
@@ -65,10 +65,10 @@ int main(int argc, char *argv[]) {
 		int_elements[i-1] = (int) strtol(hex_elements, NULL, 16);		// convert to decimal
 
 		average = 0;								// reset average
-		for(j = 0; j < i; j++) {						// sum all elements of the array
+		for(j = 0; j < SAMPLESNUM; j++) {					// sum all elements of the array
 			average += int_elements[j];
 		}
-		average = average / i;							// update the moving average (only integer values)
+		average = average / SAMPLESNUM;						// update the moving average (only integer values)
 
 		fprintf(f, "%x\n", average);						// write to file
 
