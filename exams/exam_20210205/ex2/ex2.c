@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
 			i++;								// increment data counter
 		}
 
-		int_elements[i-1] = (int) strtol(hex_elements, NULL, 16);		// convert to decimal
+		sscanf(hex_elements, "%x", &int_elements[i-1]);				// extract hexadecimal value
 
 		average = 0;								// reset average
 		for(j = 0; j < SAMPLESNUM; j++) {					// sum all elements of the array
