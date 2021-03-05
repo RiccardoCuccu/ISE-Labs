@@ -14,7 +14,7 @@ Successivamente eseguire il file generato `writer` seguito dal nome della Named 
 
 Infine inserire la successione di caratteri da utilizzare come stream di input, ad esempio:
 ```
-0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF
+012345+6789ABxCDEF01#234567+89ABCDxEF0123#456789+ABCDEFx012345#6789AB+CDEF01x234567#
 ```
 
 ## Lettura dello stream di output
