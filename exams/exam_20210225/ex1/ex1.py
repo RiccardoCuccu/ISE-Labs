@@ -32,7 +32,7 @@ while(1):
 		result = n1 ^ n2
 
 	f.write('%d %c %d %d\n' % (n1, op, n2, result))		# write to file
-	sout.write('%x' % result)				# write to serial
+	sout.write('%03x' % result)				# write to serial
 
 sin.close()							# close serial /dev/ttyS0
 sout.close()							# close serial /dev/ttyS1
