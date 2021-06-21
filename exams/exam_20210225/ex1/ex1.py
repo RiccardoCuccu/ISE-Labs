@@ -20,9 +20,9 @@ while(1):
 	dato = sin.read(BYTETOREAD)				# read 56 bits (7 bytes)
 	if dato == '': break					# check if the data stream is over
 
-	n1 = int(dato[0:3], 16)					# convert the first hex to decimal
-	n2 = int(dato[3:6], 16)					# convert the second hex to decimal
-	op = dato[6]						# extract the bitwise operation
+	n1 = int(dato[0:HEXDIGIT], 16)				# convert the first hex to decimal
+	n2 = int(dato[HEXDIGIT:HEXDIGIT*2], 16)			# convert the second hex to decimal
+	op = dato[-1]						# extract the bitwise operation
 
 	if (op == '+'):						# OR operation
 		result = n1 | n2
