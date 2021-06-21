@@ -4,18 +4,18 @@
 Risolvere l'esercizio richiesto mediante uno script in linguaggio Python.<br/>
 Si vuole realizzare un programma in grado di ricevere uno stream di dati tramite interfaccia seriale.
 I dati, ricevuti con un baudrate di 9600 bps, sono:
-- Due numeri espressi mediante caratteri ASCII , in notazione esadecimale. Tali numeri rappresentano interi senza segno su 12 bit.
+- Due numeri espressi mediante caratteri ASCII, in notazione esadecimale. Tali numeri rappresentano interi senza segno su 12 bit.
 - Un operatore logico da applicare bit-a-bit ai due operandi ricevuti precedentemente. Gli operatori, rappresentati mediante un singolo carattere ASCII, possono essere:
     - `+` per eseguire una funzione di `OR`
     - `x` per eseguire una funzione di `AND`
     - `#` per eseguire una funzione di `XOR`
     
-Il software deve ricevere i dati, effettuare l’operazione logica richiesta ed inviare il risultato tramite seriale mantenendo il medesimo baudrate, e lo stesso formato.
+Il software deve ricevere i dati, effettuare l'operazione logica richiesta ed inviare il risultato tramite seriale mantenendo il medesimo baudrate, e lo stesso formato.
 I risultati devono essere allo stesso tempo memorizzati su di un file di testo inserendo su ciascuna riga:
 - Primo operando espresso in intero in notazione decimale
 - Simbolo rappresentante la funzione logica applicata
 - Secondo operando espresso in intero in notazione decimale
-- Risultato dell’operazione espresso in intero in notazione decimale
+- Risultato dell'operazione espresso in intero in notazione decimale
 
 ## Esercizio 2
 Risolvere l'esercizio 1 mediante un programma scritto in linguaggio C, supponendo di avere a disposizione le seguenti funzioni:
