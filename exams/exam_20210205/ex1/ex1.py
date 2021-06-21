@@ -3,9 +3,10 @@
 # Import the simulator module (it should be in the same directory as this program)
 import fakeSerial as serial
 
+INTBIT = 16							# number of bits to represent an unsigned integer
+HEXDIGIT = int(INTBIT/4)					# number of hexadecimal characters to represent the same unsigned integers
 MAX_SAMPLES = 16
 
-average = 0
 i = 0								# data counter
 L = [0]*MAX_SAMPLES						# list of converted hexadecimal characters
 
@@ -19,18 +20,16 @@ except:
 	exit(-1)
 
 while True:
-	dato = sin.read(2)					# read 16 bits (2 bytes)
-	if dato == '': break					# check if the data stream is over
-
-	if i >= MAX_SAMPLES:
-		i = 1						# reset data counter
-	else:
-		i += 1						# increment data counter
+	data = sin.read(HEXDIGIT)				# read 32 bits (4 bytes)
+	if data == '': break					# check if the data stream is over
+	n = int(data, 16)					# convert the received data into decimal
 	
-	L.pop(i-1)						# remove the oldest data
-	L.insert(i-1, int(dato, 16))				# convert the received data into decimal and enter it in the list
+	L = L[:i] + [n] + L[i+1:]
 	average = sum(L)					# sum all elements of the list
 	average = average // MAX_SAMPLES			# update the moving average (only integer values)
+
+	if i >= MAX_SAMPLES-1: i = 0				# reset data counter
+	else: i += 1						# increment data counter
 
 	f.write(format(average, 'x') + "\n")			# write to file
 	sout.write(format(average, 'x'))			# write to serial
