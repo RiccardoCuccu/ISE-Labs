@@ -9,12 +9,12 @@ make writer
 
 Successivamente eseguire il file generato `writer` seguito dal nome della Named Pipe che si intende utilizzare, in questo caso:
 ```
-./writer myinput
+./writer ttyS0
 ```
 
 Infine inserire la successione di caratteri da utilizzare come stream di input, ad esempio:
 ```
-0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF
+0123456789ABCDEF0123456789ABCDEFFEDCBA9876543210FEDCBA9876543210FEDCBA9876543210FEDCBA98765432100123456789ABCDEF0123456789ABCDEF
 ```
 
 ## Lettura dello stream di output
@@ -25,7 +25,7 @@ make reader
 
 Successivamente eseguire il file generato `reader` seguito dal nome della Named Pipe che si intende utilizzare, in questo caso:
 ```
-./reader myoutput
+./reader ttyS1
 ```
 
 Infine in un terzo terminale compilare il file `ex2.c` ed eseguire il file generato `ex2.out` tramite il comando:

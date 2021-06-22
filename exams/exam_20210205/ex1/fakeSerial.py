@@ -24,7 +24,7 @@ class Serial:
 		self._isOpen  = True
 		self._receivedData = ""
 		#self._data = "It was the best of times.\nIt was the worst of times.\n"
-		self._data = "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF"
+		self._data = "0123456789ABCDEF0123456789ABCDEFFEDCBA9876543210FEDCBA9876543210FEDCBA9876543210FEDCBA98765432100123456789ABCDEF0123456789ABCDEF"
 
 	## isOpen()
 	# returns True if the port to the Arduino is open.  False otherwise

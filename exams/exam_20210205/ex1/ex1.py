@@ -31,8 +31,8 @@ while True:
 	if i >= MAX_SAMPLES-1: i = 0				# reset data counter
 	else: i += 1						# increment data counter
 
-	f.write(format(average, 'x') + "\n")			# write to file
-	sout.write(format(average, 'x'))			# write to serial
+	f.write(format(average, '04x') + "\n")			# write to file
+	sout.write(format(average, '04x'))			# write to serial
 	
 sin.close()							# close serial 0
 sout.close()							# close serial 1

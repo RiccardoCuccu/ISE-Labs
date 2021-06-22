@@ -7,9 +7,9 @@
 #include <errno.h> 
 
 #define BAUDRATE 9600
-#define SAMPLESNUM 16
-#define SAMPLESSIZE 16
-#define SAMPLEBYTES SAMPLESSIZE/8
+#define INTBIT 16
+#define HEXDIGIT INTBIT/4
+#define MAX_SAMPLES 16
 
 int main(int argc, char *argv[]) {
 
@@ -18,11 +18,11 @@ int main(int argc, char *argv[]) {
 	int i = 0;
 	FILE *f;
 
-	int int_elements[SAMPLESNUM] = {};						// initialize the array to zero
-	char hex_elements[SAMPLEBYTES+1];
+	int int_elements[MAX_SAMPLES] = {};						// initialize the array to zero
+	char hex_element[HEXDIGIT+1];
 
-	char serialNameIn[] = "myinput";
-	char serialNameOut[] = "myoutput";
+	char serialNameIn[] = "ttyS0";
+	char serialNameOut[] = "ttyS1";
 
 	//sin = serialOpen(serialNameIn);
 	//sout = serialOpen(serialNameOut);
@@ -49,34 +49,33 @@ int main(int argc, char *argv[]) {
 
 	while(1) {
 
-		//serialRead(sin, &hex_elements[0]);
-		//serialRead(sin, &hex_elements[1]);
-		check = read(sin, hex_elements, SAMPLEBYTES);				// read SAMPLESSIZE bits
-		if (check != SAMPLEBYTES) break;					// check if the data stream is over
+		//for (j = 0; j < HEXDIGIT; j++) {
+		//	serialRead(sin, &hex_element[j]);
+		//}
+		check = read(sin, hex_element, HEXDIGIT);				// read HEXDIGIT bytes
+		if (check != HEXDIGIT) break;						// check if the data stream is over
 
-		hex_elements[SAMPLEBYTES] = '\0';					// enter the string terminator
+		hex_element[HEXDIGIT] = '\0';						// enter the string terminator
 
-		if (i >= SAMPLESNUM) {
-			i = 1;								// reset data counter
-		} else {
-			i++;								// increment data counter
-		}
+		if (i >= MAX_SAMPLES-1) i = 0;						// reset data counter
+		else i++;								// increment data counter
 
-		sscanf(hex_elements, "%x", &int_elements[i-1]);				// extract hexadecimal value
+		sscanf(hex_element, "%x", &int_elements[i]);				// extract hexadecimal value
 
 		average = 0;								// reset average
-		for(j = 0; j < SAMPLESNUM; j++) {					// sum all elements of the array
+		for(j = 0; j < MAX_SAMPLES; j++) {					// sum all elements of the array
 			average += int_elements[j];
 		}
-		average = average / SAMPLESNUM;						// update the moving average (only integer values)
+		average = average / MAX_SAMPLES;					// update the moving average (only integer values)
 
-		fprintf(f, "%x\n", average);						// write to file
+		fprintf(f, "%04x\n", average);						// write to file
 
-		sprintf(hex_elements, "%x", average);					// prepare the string
+		sprintf(hex_element, "%04x", average);					// prepare the string
 
-		//serialWrite(sout, hex_elements[0]);
-		//serialWrite(sout, hex_elements[1]);
-		check = write(sout, &hex_elements, strlen(hex_elements));		// write to serial
+		//for (j = 0; j < HEXDIGIT; j++) {
+		//	serialWrite(sout, hex_element[j]);
+		//}
+		check = write(sout, &hex_element, strlen(hex_element));			// write to serial
 		if (check == -1) {
 			perror("ERROR during WRITE execution (output stream)");
 			exit(errno);
