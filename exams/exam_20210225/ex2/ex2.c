@@ -59,15 +59,15 @@ int main(int argc, char *argv[]) {
 		if (check != HEXDIGIT) break;						// check if the data stream is over
 		cn1[HEXDIGIT] = '\0';							// enter the string terminator
 
-		//for (i = 0; i < HEXDIGIT; i++) {					// read the first hexadecimal (3 bytes)
+		//for (i = 0; i < HEXDIGIT; i++) {					// read the second hexadecimal (3 bytes)
 		//	serialRead(sin, &cn2[i]);
 		//}
-		check = read(sin, cn2, HEXDIGIT);					// read the first hexadecimal
+		check = read(sin, cn2, HEXDIGIT);					// read the second hexadecimal
 		if (check != HEXDIGIT) break;						// check if the data stream is over
 		cn2[HEXDIGIT] = '\0';							// enter the string terminator
 
 		//serialRead(sin, &op);
-		check = read(sin, &op, 1);						// reads the sign of the operation
+		check = read(sin, &op, 1);						// read the sign of the operation
 		if (check != 1) break;							// check if the data stream is over
 
 		sscanf(cn1, "%x", &n1);							// extract first hexadecimal value
@@ -81,7 +81,7 @@ int main(int argc, char *argv[]) {
 
 		sprintf(cresult, "%03x", result);					// prepare the string
 
-		//for (i = 0; i < HEXDIGIT; i++) {					// read the first hexadecimal (3 bytes)
+		//for (i = 0; i < HEXDIGIT; i++) {					// write the result (3 bytes)
 		//	serialWrite(sout, &cresult[i]);
 		//}
 		check = write(sout, &cresult, strlen(cresult));				// write to serial
