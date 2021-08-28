@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <errno.h>
 
+#define DIGITS 4
 #define SAMPLES 16
 
 int main(int argc, char *argv[]) {
 
-	int i = 0;
-	int j = 0;
-	int k = 0;
+	int i;									// generic counter
+	int j = 0;								// samples counter
+	int k = 0;								// digit counter
 	int average;
-	int temp[4] = {0};
 	int values[SAMPLES];
 
 	char ch;
+	char temp[DIGITS];
+	char format[10];
 
 	FILE *fin, *fout;
 
@@ -30,39 +31,39 @@ int main(int argc, char *argv[]) {
 		exit(errno);
 	}
 
-	while(!feof(fin)) {							// loops until the file is finished
-		if (i == SAMPLES) {
-			average = 0;						// reset average
-			for(k = 0; k < SAMPLES; k++) {
-				average = average + values[k];			// sum the samples
+	sprintf(format, "%%0%dx ", DIGITS);					// create the string for the print format
+
+	for(i = 0; i < DIGITS; i++){						// reset digits
+		temp[i] = '\0';
+	}
+
+	while(1) {
+		
+		ch = fgetc(fin);						// read one character at a time
+
+		if (ch == ' ' || ch == EOF) {					// if the character is a space or EOF the number is finished
+			values[j] = atoi(temp);					// conversion from string to integer
+			j++;							// increment samples counter
+			k = 0;							// reset digit counter
+			for(i = 0; i < DIGITS; i++){				// delete digits
+				temp[i] = '\0';
 			}
-			average = average/SAMPLES; 				// average calculation
-			memset(values, 0, sizeof(values)); 			// reset variable "values"
-			fprintf(fout, "%04x ", average); 			// writing the 4-digit hexadecimal value (16 bit) to the output file
-			i = 0; 							// reset samples counter
 		} else {
-			ch = fgetc(fin);					// extract a char
-			if (ch == 0x20) {					// if the schar is a space
-				switch (j) {					// sum of the digits according to their order of magnitude
-					case 1: values[i] = temp[0];
-					break;
-					case 2: values[i] = temp[0]*10 + temp[1];
-					break;
-					case 3: values[i] = temp[0]*100 + temp[1]*10 + temp[2];
-					break;
-					case 4: values[i] = temp[0]*1000 + temp[1]*100 + temp[2]*10 + temp[3];
-					break;
-					default: values[i] = 0;
-					break;
-				}
-				memset(temp, 0, sizeof(temp));			// reset variable "temp"
-				i++;						// increment samples counter
-				j = 0;						// reset digits counter
-			} else {
-				temp[j] = atoi(&ch);				// conversion from character to integer
-				j++;						// increment digits counter
-			}
+			temp[k]=ch;						// save digit
+			k++;							// increment digit counter
 		}
+
+		if(j == SAMPLES) {
+			average = 0;						// reset average
+			for(i = 0; i < SAMPLES; i++) {
+				average += values[i];				// sum the samples
+			}
+			average = average / SAMPLES;				// average calculation
+			fprintf(fout, format, average);				// write 4-digit hexadecimal value (16 bit) to the output file
+			j = 0;							// reset samples counter
+		}
+
+		if(ch == EOF) break;						// EOF
 	}
 
 	fclose(fin);								// close input file
