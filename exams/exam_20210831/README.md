@@ -21,7 +21,7 @@ Ad esempio:
 ```
 
 Sia la chiave che il valore sono stringhe composte esclusivamente di caratteri alfabetici e/o numeri.<br/>
-Attorno ai delimitatori (parentesi graffe, `:` e `;` possono essere anche presenti degli spazi, ovvero delle interruzioni di linea (vai a capo).
+Attorno ai delimitatori (parentesi graffe, `:` e `;`) possono essere anche presenti degli spazi, ovvero delle interruzioni di linea (vai a capo).
 
 Il programma realizzato deve leggere il file *input.txt* e generare un file di uscita in cui ogni riga contiene una chiave e tutti i valori corrispondenti trovati, separati da una virgola, secondo il formato seguente:
 ```
